@@ -1,16 +1,19 @@
-import React from 'react';
-import { Nav, Navbar, Container, NavDropdown } from 'react-bootstrap';
-import { LinkContainer } from 'react-router-bootstrap';
-import { logout } from '../actions/userActions';
-import { useSelector, useDispatch } from 'react-redux';
+import React from 'react'
+import { Nav, Navbar, Container, NavDropdown } from 'react-bootstrap'
+import { LinkContainer } from 'react-router-bootstrap'
+import { logout } from '../actions/userActions'
+import { useSelector, useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 
 const Header = () => {
-	const userLogin = useSelector(state => state.userLogin);
-	const dispatch = useDispatch();
-	const { userInfo } = userLogin;
+	const userLogin = useSelector(state => state.userLogin)
+	const dispatch = useDispatch()
+	const navigate = useNavigate()
+	const { userInfo } = userLogin
 	const logoutHandler = () => {
-		dispatch(logout());
-	};
+		dispatch(logout())
+		navigate('/')
+	}
 	return (
 		<header>
 			<Navbar bg='dark' variant='dark' collapseOnSelect expand='lg'>
@@ -54,7 +57,7 @@ const Header = () => {
 				</Container>
 			</Navbar>
 		</header>
-	);
-};
+	)
+}
 
-export default Header;
+export default Header

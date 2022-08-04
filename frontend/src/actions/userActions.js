@@ -13,7 +13,9 @@ import {
 	USER_UPDATE_PROFILE_FAIL,
 	USER_UPDATE_PROFILE_REQUEST,
 	USER_UPDATE_PROFILE_SUCCESS,
+	USER_DETAILS_RESET,
 } from '../constants/userConstants'
+import { MY_ORDER_LIST_RESET } from '../constants/orderContants'
 
 export const login = (email, password) => async dispatch => {
 	try {
@@ -96,7 +98,6 @@ export const getUserDetails = id => async (dispatch, getState) => {
 		const {
 			userLogin: { userInfo },
 		} = getState()
-		console.log(userInfo)
 		const config = {
 			headers: {
 				'Content-Type': 'application/json',
@@ -124,6 +125,8 @@ export const getUserDetails = id => async (dispatch, getState) => {
 export const logout = () => dispatch => {
 	localStorage.removeItem('userInfo')
 	dispatch({ type: USER_LOGOUT })
+	dispatch({ type: USER_DETAILS_RESET })
+	dispatch({ type: MY_ORDER_LIST_RESET })
 }
 
 export const updateUserProfile = user => async (dispatch, getState) => {
@@ -134,7 +137,6 @@ export const updateUserProfile = user => async (dispatch, getState) => {
 		const {
 			userLogin: { userInfo },
 		} = getState()
-		console.log(userInfo)
 		const config = {
 			headers: {
 				'Content-Type': 'application/json',

@@ -5,7 +5,7 @@ import Message from '../components/Message'
 import { Row, Col, ListGroup, Image, Form, Button, Card } from 'react-bootstrap'
 import { addToCart, removeFromCart } from '../actions/cartActions'
 
-const CartScreen = () => {
+const CartScreen = ({ hi }) => {
 	//const [qty, useQty] = useState(1);
 	const params = useParams()
 	const navigate = useNavigate()
