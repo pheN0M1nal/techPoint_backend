@@ -59,4 +59,7 @@ h2 {
   .carousel-caption h2 {
     font-size: 2.5vw;
   }
+  .mobile-search {
+    margin-top: 10px;
+  }
 }

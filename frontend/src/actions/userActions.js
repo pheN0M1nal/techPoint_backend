@@ -134,6 +134,7 @@ export const getUserDetails = (id) => async (dispatch, getState) => {
 
 export const logout = () => (dispatch) => {
   localStorage.removeItem('userInfo')
+
   dispatch({ type: USER_LOGOUT })
   dispatch({ type: USER_DETAILS_RESET })
   dispatch({ type: MY_ORDER_LIST_RESET })

@@ -15,7 +15,7 @@ const SearchBox = () => {
     }
   }
   return (
-    <Form onSubmit={submitHandler} inline>
+    <Form onSubmit={submitHandler} inline className="mobile-search">
       <FormGroup>
         <InputGroup>
           <Form.Control
