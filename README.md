@@ -1,4 +1,4 @@
-# ProShop eCommerce Platform
+# TechPoint eCommerce Platform
 
 ![screenshot](https://github.com/pheN0M1nal/proshop_mern/blob/main/techpoint-screenshot.png)
 
