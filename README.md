@@ -1,5 +1,14 @@
 # TechPoint eCommerce Platform
 
+## Project is Live, checkout here
+https://techpoint-commerce-store.herokuapp.com/
+
+for checking admin panel functionality, you may put
+email: admin@example.com
+password: 123456
+
+## TechPoint eCommerce Platform
+
 ![screenshot](https://github.com/pheN0M1nal/proshop_mern/blob/main/techpoint-screenshot.png)
 
 ## Features
