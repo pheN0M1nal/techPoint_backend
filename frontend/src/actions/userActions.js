@@ -26,6 +26,10 @@ import {
   USER_UPDATE_FAIL,
 } from '../constants/userConstants'
 import { MY_ORDER_LIST_RESET } from '../constants/orderContants'
+const url =
+  process.env.REACT_APP_NODE_ENV === 'production'
+    ? process.env.REACT_APP_API_SERVER
+    : process.env.REACT_APP_API_LOCALHOST
 
 export const login = (email, password) => async (dispatch) => {
   try {
@@ -39,7 +43,7 @@ export const login = (email, password) => async (dispatch) => {
     }
 
     const { data } = await axios.post(
-      '/api/users/login',
+      `${url}/api/users/login`,
       { email, password },
       config
     )
@@ -73,7 +77,7 @@ export const register = (name, email, password) => async (dispatch) => {
     }
 
     const { data } = await axios.post(
-      '/api/users',
+      `${url}/api/users`,
       { name, email, password },
       config
     )
@@ -115,7 +119,7 @@ export const getUserDetails = (id) => async (dispatch, getState) => {
       },
     }
 
-    const { data } = await axios.get(`/api/users/${id}`, config)
+    const { data } = await axios.get(`${url}/api/users/${id}`, config)
 
     dispatch({
       type: USER_DETAILS_SUCCESS,
@@ -156,7 +160,7 @@ export const updateUserProfile = (user) => async (dispatch, getState) => {
       },
     }
 
-    const { data } = await axios.put(`/api/users/PROFILE`, user, config)
+    const { data } = await axios.put(`${url}/api/users/PROFILE`, user, config)
 
     dispatch({
       type: USER_UPDATE_PROFILE_SUCCESS,
@@ -194,7 +198,7 @@ export const listUser = () => async (dispatch, getState) => {
       },
     }
 
-    const { data } = await axios.get(`/api/users`, config)
+    const { data } = await axios.get(`${url}/api/users`, config)
 
     dispatch({
       type: USER_LIST_SUCCESS,
@@ -225,7 +229,7 @@ export const deleteUser = (id) => async (dispatch, getState) => {
       },
     }
 
-    await axios.delete(`/api/users/${id}`, config)
+    await axios.delete(`${url}/api/users/${id}`, config)
 
     dispatch({
       type: USER_DELETE_SUCCESS,
@@ -256,7 +260,11 @@ export const updateUser = (user) => async (dispatch, getState) => {
       },
     }
 
-    const { data } = await axios.put(`/api/users/${user._id}`, user, config)
+    const { data } = await axios.put(
+      `${url}/api/users/${user._id}`,
+      user,
+      config
+    )
 
     dispatch({
       type: USER_UPDATE_SUCCESS,

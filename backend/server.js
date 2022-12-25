@@ -11,9 +11,13 @@ import connectDB from './config/db.js'
 import colors from 'colors'
 import morgan from 'morgan'
 
+import cors from 'cors'
+
 import { notFound, errorHandler } from '../middleware/errorMiddleware.js'
 
 const app = express()
+
+app.use(cors())
 
 dotenv.config()
 

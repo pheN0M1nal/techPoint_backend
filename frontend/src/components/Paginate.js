@@ -1,4 +1,3 @@
-import { PaginationItem } from '@mui/material'
 import React from 'react'
 
 import { Pagination } from 'react-bootstrap'
