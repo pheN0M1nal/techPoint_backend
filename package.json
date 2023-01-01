@@ -1,6 +1,6 @@
 {
-  "name": "techpoint",
-  "version": "5.4",
+  "name": "proshop",
+  "version": "1.0.0",
   "description": "MERN Shopping Cart",
   "main": "server.js",
   "type": "module",
